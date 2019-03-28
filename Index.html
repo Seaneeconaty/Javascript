@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>JavaScript</title>
+    </head>
+    <body>
+        <h1>JavaScript</h1>
+        <script type="text/JavaScript">
+        
+       
+
+//Assignment - 30th March
+
+// Find total number of areas in the house
+// Add a dining table to the living room
+// Add a dining table to the living room
+// Add a stove to the kitchen
+// Remove the washing machine from bedroomOne
+// Find the total number of beds in all rooms
+// Change the color of the car to blue
+// Add a another car to the garage with a honk function
+// Make the new car honk
+// Change the 'broken chair' in the kitchen to 'new chair'
+// If the house has a garden, console.log the name of the flower
+
+var house = {
+areas: [{
+livingRoom: {
+items: ['tv','sofa']
+},
+bedroomOne: {
+items: ['bed','washing machine'],
+windows: 3
+},
+bedroomTwo:{
+items: ['bed','bed','desk'],
+windows: 4
+},
+kitchen:{
+items: ['fridge','broken chair']
+}
+}],
+garden: [true, 'Red Rose'],
+garage: {
+car: {
+color: 'red',
+wheels: 4,
+honk: ()=>{alert("Beep")}
+}
+}
+}
+
+let myRoom =Object.keys(house.areas[0]).length;
+console.log(myRoom);
+
+house.areas[0].livingRoom.items.push("dining table");
+console.log(house.areas[0].livingRoom.items);
+
+house.areas[0].kitchen.items.push("stove");
+console.log(house.areas[0].kitchen.items);
+
+house.areas[0].bedroomOne.items.pop();
+console.log(house.areas[0].bedroomOne.items);
+
+let myBed=0;
+
+let allBeds= (varobj)=>{
+    for ( i=0;i<varobj.items.length;i++)
+    {
+        if(varobj.items[i]=="bed" )
+        { myBed=myBed+1};
+
+    return myBed;    
+    }
+}
+bedcountfinal=allBeds(house.areas[0].livingRoom)+allBeds(house.areas[0].bedroomOne)+allBeds(house.areas[0].bedroomTwo)+allBeds(house.areas[0].kitchen)
+
+console.log(allBeds(bedcountfinal));
+
+
+
+house.garage.car.color="blue";
+console.log(house.garage.car.color);
+
+house.garage.car2={honk: ()=>{alert("Beep")}};
+console.log(house.garage.car2);
+
+house.garage.car2.honk;
+
+house.areas[0].bedroomOne.items.pop();
+house.areas[0].bedroomOne.items.push("new chair");
+console.log(house.areas[0].bedroomOne.items);
+
+ if(house.garden){
+     console.log(house.garden[1])
+     };
+
+
+
+
+
+
+
+
+
+
+
+
+
+     /** let ingredients = [
+                'tomatoes', 
+                'pepperoni', 
+                'bananas',
+                'cheese',
+                'strawberries',
+                'beef',
+                'tuna',
+                'pineapple',
+                'mango'
+            ];
+            // Loop through all ingredients
+            // If the ingredient belongs on the pizza
+            // console.log("Yes, put on pizza");
+            // Otherwise
+            // console.log("No, don't include on pizza");
+
+            let pepperoni = [
+                "Tomatoes",
+                "Cheese",
+                "pepperoni"
+            ];
+            for(p=0; p<ingredients.length; p++)
+            {
+                if(pepperoni.includes(ingredients[p])){
+                console.log("Yes, put on pizza");}
+            else {
+                console.log("No, don't include on pizza"); 
+            }
+         
+                
+            };
+            
+
+            let building = {
+                entrances: ["main", "back",],
+                floors: { 
+                    "P": "Parking",
+                    "M": "Mezzanine",
+                    "R": [
+                        "lobby",
+                        "1st floor",
+                        "2nd floor",
+                        
+
+                    ]
+                }
+            }
+    //1. Add another entrance to the building
+        building.entrances.push ("side");
+               
+           
+//2. Add 8 more floots to R (for/while loop)     
+for(let i=0; i<8; i++) {
+    building.floors.R.push(i+3,"floor");
+};
+//3. Add a gym floor 
+    building.floors.Gym = {};
+
+
+ //4. Add equipment in the gym (object)
+ building.floors.Gym.equipment = ['weights', 'barbel', 'rope'];
+
+  //5. Add open/close hours for the gym (array)
+  building.floors.Gym.Openinghours = ['08.00 - 22.00'];
+
+            //1. Add another entrance to the building
+            //2. Add 8 more floots to R (for/while loop)
+            //3. Add a gym floor 
+            //4. Add equipment in the gym (object)
+            //5. Add open/close hours for the gym (array)
+            
+
+            let myName = ['s','e','a','n'];
+          console.log(myName);
+
+          let removedItem = myName.splice([3]);
+          console.log(removedItem);
+
+          let addItem = myName.push('x');
+          console.log(myName);
+          
+
+var arr = [14, 58, 20, 77, 66, 82, 42, 67, 42, 4]
+    var min = Math.min.apply(Math, arr)
+        console.log(min)
+       
+
+        var arr = [14, 58, 20, 77, 66, 82, 42, 67, 42, 4]
+           var max = Math.max.apply(Math, arr)
+                console.log(max)
+                
+            
+ var house = {
+areas: [{
+livingRoom: {
+items: ['tv','sofa']
+},
+bedroomOne: {
+items: ['bed','washing machine'],
+windows: 3
+},
+bedroomTwo:{
+items: ['bed','bed','desk'],
+windows: 4
+},
+kitchen:{
+items: ['fridge','broken chair']
+}
+}],
+garden: [true, 'Red Rose'],
+garage: {
+car: {
+color: 'red',
+wheels: 4,
+honk: ()=>{alert("Beep")}
+}
+}
+}
+
+// Find total number of areas in the house
+let count = Object.keys(house.areas[0]).length;
+console.log(count);
+// Add a dining table to the living room
+house.areas[0].livingRoom.items.push('dining table');
+
+// Add a stove to the kitchen
+house.areas[0].kitchen.items.push('stove');
+// Remove the washing machine from bedroomOne
+house.areas[0].bedroomOne.items.splice([1]);
+// Find the total number of beds in all rooms
+let myBed2 = Object.keys(house.areas[1,2].items('bed')).length;
+console.log(myBed);
+// Change the color of the car to blue
+'red'.replace
+
+}
+// Add a another car to the garage with a honk function
+house.garage.car.push('New Car');
+
+// Make the new car honk
+// Change the 'broken chair' in the kitchen to 'new chair'
+// If the house has a garden, console.log the name of the flower
+
+**/
+
+
+
+/**
+//exercise in class - teachers solution. he uses map. 
+
+// Loop through nameList
+//find the first character in each name
+//if it's Make it uppercase
+//Make the rest of the characters lower case
+//Return a new array
+
+
+const newArray = nameList.map(
+    (names)=> {
+
+//find the first character in each name
+firstLetter = name.substr(0,1).toUpperCase();
+//if it's Make it uppercase
+//Make the rest of the characters lower case
+otherLetters = name.substr(1).toLowerCase();
+return firstLetter + otherLetters;
+console.log(newArray);
+    }
+)
+
+//Return a new array
+
+
+//My way using a for loop. 
+
+let nameList = ['ali', 'jim','owais', 'sara','STEVEN', 'aHmad'];
+
+
+
+for(j=0; j<nameList.length; j++);
+ {
+
+newName = nameList[j].substr(0,1).toUpperCase() + nameList[j].substr(1).toLowerCase();
+newArray.push(newName);
+ }
+
+
+**/
+
+
+
+
+
+
+          
+
+            
+              
+          
+          
+
+
+
+
+
+        </script>
+    </body>
+</html>
+
+
+            
+
+
+
+         
+
+
+
+            
+           
+            
+
+
+     
