@@ -51,8 +51,8 @@ honk: ()=>{alert("Beep")}
 }
 }
 
-let myRoom =Object.keys(house.areas[0]).length;
-console.log(myRoom);
+let myHomeHouse =Object.keys(house.areas[0]).length;
+console.log(myHomeHouse);
 
 house.areas[0].livingRoom.items.push("dining table");
 console.log(house.areas[0].livingRoom.items);
@@ -63,20 +63,21 @@ console.log(house.areas[0].kitchen.items);
 house.areas[0].bedroomOne.items.pop();
 console.log(house.areas[0].bedroomOne.items);
 
-let myBed=0;
 
-let allBeds= (varobj)=>{
-    for ( i=0;i<varobj.items.length;i++)
-    {
-        if(varobj.items[i]=="bed" )
-        { myBed=myBed+1};
-
-    return myBed;    
-    }
-}
-bedcountfinal=allBeds(house.areas[0].livingRoom)+allBeds(house.areas[0].bedroomOne)+allBeds(house.areas[0].bedroomTwo)+allBeds(house.areas[0].kitchen)
-
-console.log(allBeds(bedcountfinal));
+let myItemsBed = house.areas[0].livingRoom.items.filter(item => item == "bed");;
+console.log("No. of beds in living room ", myItemsBed.length);
+​
+let myItemsBed2 = house.areas[0].bedroomOne.items.filter(item => item == "bed");;
+console.log("Should read zero, as spliced previously. No. of beds in bedroom one ", myItemsBed2.length);
+​
+let myItemsBed3 = house.areas[0].bedroomTwo.items.filter(item => item == "bed");;
+console.log("No. of beds in bedroom two ", myItemsBed3.length);
+​
+let myItemsBed4 = house.areas[0].kitchen.items.filter(item => item == "bed");;
+console.log("No. of beds in kitchen ", myItemsBed4.length);
+​
+let totalNumBeds = myItemsBed.length + myItemsBed2.length + myItemsBed3.length + myItemsBed4.length;
+console.log("Total Number of beds in house" ,totalNumBeds);
 
 
 
